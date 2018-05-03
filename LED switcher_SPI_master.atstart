@@ -1,0 +1,264 @@
+format_version: '2'
+name: LED switcher
+board:
+  identifier: SAMD20XplainedPro
+  device: SAMD20J18A-AU
+details: null
+application:
+  definition: 'Atmel:Application_Examples:0.0.1::Application:LED_switcher:'
+  configuration: null
+middlewares: {}
+drivers:
+  GCLK:
+    user_label: GCLK
+    definition: Atmel:SAMD20_Drivers:0.0.1::SAMD20J18A-AU::GCLK::driver_config_definition::GCLK::HAL:HPL:GCLK
+    functionality: System
+    api: HAL:HPL:GCLK
+    configuration:
+      enable_gclk_gen_0: true
+      enable_gclk_gen_1: false
+      enable_gclk_gen_2: false
+      enable_gclk_gen_3: false
+      enable_gclk_gen_4: false
+      enable_gclk_gen_5: false
+      enable_gclk_gen_6: false
+      enable_gclk_gen_7: false
+      gclk_arch_gen_0_RUNSTDBY: false
+      gclk_arch_gen_0_enable: true
+      gclk_arch_gen_0_idc: false
+      gclk_arch_gen_0_oe: false
+      gclk_arch_gen_0_oov: false
+      gclk_arch_gen_1_RUNSTDBY: false
+      gclk_arch_gen_1_enable: false
+      gclk_arch_gen_1_idc: false
+      gclk_arch_gen_1_oe: false
+      gclk_arch_gen_1_oov: false
+      gclk_arch_gen_2_RUNSTDBY: false
+      gclk_arch_gen_2_enable: false
+      gclk_arch_gen_2_idc: false
+      gclk_arch_gen_2_oe: false
+      gclk_arch_gen_2_oov: false
+      gclk_arch_gen_3_RUNSTDBY: false
+      gclk_arch_gen_3_enable: false
+      gclk_arch_gen_3_idc: false
+      gclk_arch_gen_3_oe: false
+      gclk_arch_gen_3_oov: false
+      gclk_arch_gen_4_RUNSTDBY: false
+      gclk_arch_gen_4_enable: false
+      gclk_arch_gen_4_idc: false
+      gclk_arch_gen_4_oe: false
+      gclk_arch_gen_4_oov: false
+      gclk_arch_gen_5_RUNSTDBY: false
+      gclk_arch_gen_5_enable: false
+      gclk_arch_gen_5_idc: false
+      gclk_arch_gen_5_oe: false
+      gclk_arch_gen_5_oov: false
+      gclk_arch_gen_6_RUNSTDBY: false
+      gclk_arch_gen_6_enable: false
+      gclk_arch_gen_6_idc: false
+      gclk_arch_gen_6_oe: false
+      gclk_arch_gen_6_oov: false
+      gclk_arch_gen_7_RUNSTDBY: false
+      gclk_arch_gen_7_enable: false
+      gclk_arch_gen_7_idc: false
+      gclk_arch_gen_7_oe: false
+      gclk_arch_gen_7_oov: false
+      gclk_gen_0_div: 1
+      gclk_gen_0_div_sel: false
+      gclk_gen_0_oscillator: 8MHz Internal Oscillator (OSC8M)
+      gclk_gen_1_div: 1
+      gclk_gen_1_div_sel: false
+      gclk_gen_1_oscillator: 8MHz Internal Oscillator (OSC8M)
+      gclk_gen_2_div: 1
+      gclk_gen_2_div_sel: false
+      gclk_gen_2_oscillator: 32kHz High Accuracy Internal Oscillator (OSC32K)
+      gclk_gen_3_div: 1
+      gclk_gen_3_div_sel: false
+      gclk_gen_3_oscillator: 32kHz Ultra Low Power Internal Oscillator (OSCULP32K)
+      gclk_gen_4_div: 1
+      gclk_gen_4_div_sel: false
+      gclk_gen_4_oscillator: 32kHz Ultra Low Power Internal Oscillator (OSCULP32K)
+      gclk_gen_5_div: 1
+      gclk_gen_5_div_sel: false
+      gclk_gen_5_oscillator: 32kHz High Accuracy Internal Oscillator (OSC32K)
+      gclk_gen_6_div: 1
+      gclk_gen_6_div_sel: false
+      gclk_gen_6_oscillator: 32kHz High Accuracy Internal Oscillator (OSC32K)
+      gclk_gen_7_div: 1
+      gclk_gen_7_div_sel: false
+      gclk_gen_7_oscillator: 32kHz High Accuracy Internal Oscillator (OSC32K)
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group: null
+  PM:
+    user_label: PM
+    definition: Atmel:SAMD20_Drivers:0.0.1::SAMD20J18A-AU::PM::driver_config_definition::PM::HAL:HPL:PM
+    functionality: System
+    api: HAL:HPL:PM
+    configuration:
+      apba_div: '1'
+      apbb_div: '1'
+      apbc_div: '1'
+      cpu_clock_source: Generic clock generator 0
+      cpu_div: '1'
+      enable_cpu_clock: true
+      nvm_wait_states: '0'
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group:
+        nodes:
+        - name: CPU
+          input: CPU
+        configuration: {}
+  SPI_0:
+    user_label: SPI_0
+    definition: Atmel:SAMD20_Drivers:0.0.1::SAMD20J18A-AU::SERCOM1::driver_config_definition::SPI.Master::HAL:Driver:SPI.Master.Async
+    functionality: SPI
+    api: HAL:Driver:SPI_Master_Async
+    configuration:
+      spi_master_advanced: false
+      spi_master_arch_cpha: Sample input on leading edge
+      spi_master_arch_cpol: SCK is low when idle
+      spi_master_arch_dbgstop: Keep running
+      spi_master_arch_dord: MSB first
+      spi_master_arch_ibon: In data stream
+      spi_master_arch_runstdby: false
+      spi_master_baud_rate: 50000
+      spi_master_character_size: 8 bits
+      spi_master_dummybyte: 511
+      spi_master_rx_enable: true
+    optional_signals: []
+    variant:
+      specification: TXPO=1, RXPO=0
+      required_signals:
+      - name: SERCOM1/PAD/0
+        pad: PA16
+        label: MISO
+      - name: SERCOM1/PAD/2
+        pad: PA18
+        label: MOSI
+      - name: SERCOM1/PAD/3
+        pad: PA19
+        label: SCK
+    clocks:
+      domain_group:
+        nodes:
+        - name: Core
+          input: Generic clock generator 0
+        - name: Slow
+          input: Generic clock generator 3
+        configuration:
+          core_gclk_selection: Generic clock generator 0
+          slow_gclk_selection: Generic clock generator 3
+  DELAY_0:
+    user_label: DELAY_0
+    definition: Atmel:SAMD20_Drivers:0.0.1::SAMD20J18A-AU::SysTick::driver_config_definition::Delay::HAL:Driver:Delay
+    functionality: Delay
+    api: HAL:Driver:Delay
+    configuration:
+      systick_arch_tickint: false
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group: null
+  SYSCTRL:
+    user_label: SYSCTRL
+    definition: Atmel:SAMD20_Drivers:0.0.1::SAMD20J18A-AU::SYSCTRL::driver_config_definition::SYSCTRL::HAL:HPL:SYSCTRL
+    functionality: System
+    api: HAL:HPL:SYSCTRL
+    configuration:
+      dfll48m_arch_calibration: false
+      dfll48m_arch_ccdis: false
+      dfll48m_arch_coarse: 31
+      dfll48m_arch_enable: false
+      dfll48m_arch_fine: 512
+      dfll48m_arch_llaw: false
+      dfll48m_arch_ondemand: true
+      dfll48m_arch_qldis: false
+      dfll48m_arch_runstdby: false
+      dfll48m_arch_stable: false
+      dfll48m_mode: Open Loop Mode
+      dfll48m_mul: 0
+      dfll48m_ref_clock: Generic clock generator 3
+      dfll_arch_cstep: 1
+      dfll_arch_fstep: 1
+      enable_dfll48m: false
+      enable_osc32k: false
+      enable_osc8m: true
+      enable_osculp32k: true
+      enable_xosc: false
+      enable_xosc32k: false
+      osc32k_arch_calib: 0
+      osc32k_arch_en1k: false
+      osc32k_arch_en32k: false
+      osc32k_arch_enable: false
+      osc32k_arch_ondemand: true
+      osc32k_arch_overwrite_calibration: false
+      osc32k_arch_runstdby: false
+      osc32k_arch_startup: 3 Clock Cycles (92us)
+      osc32k_arch_wrtlock: false
+      osc8m_arch_calib: 0
+      osc8m_arch_enable: true
+      osc8m_arch_ondemand: true
+      osc8m_arch_overwrite_calibration: false
+      osc8m_arch_runstdby: false
+      osc8m_presc: '8'
+      osculp32k_arch_calib: 0
+      osculp32k_arch_overwrite_calibration: false
+      osculp32k_arch_wrtlock: false
+      xosc32k_arch_aampen: false
+      xosc32k_arch_en1k: false
+      xosc32k_arch_en32k: false
+      xosc32k_arch_enable: false
+      xosc32k_arch_ondemand: true
+      xosc32k_arch_runstdby: false
+      xosc32k_arch_startup: 122 us
+      xosc32k_arch_wrtlock: false
+      xosc32k_arch_xtalen: false
+      xosc_arch_ampgc: false
+      xosc_arch_enable: false
+      xosc_arch_gain: 2Mhz
+      xosc_arch_ondemand: true
+      xosc_arch_runstdby: false
+      xosc_arch_startup: 31 us
+      xosc_arch_xtalen: false
+      xosc_frequency: 400000
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group: null
+pads:
+  LED0:
+    name: PA14
+    definition: Atmel:SAMD20_Drivers:0.0.1::SAMD20J18A-AU::pad::PA14
+    mode: Digital output
+    user_label: LED0
+    configuration: null
+  SW0:
+    name: PA15
+    definition: Atmel:SAMD20_Drivers:0.0.1::SAMD20J18A-AU::pad::PA15
+    mode: Digital input
+    user_label: SW0
+    configuration:
+      pad_pull_config: Pull-up
+  PA16:
+    name: PA16
+    definition: Atmel:SAMD20_Drivers:0.0.1::SAMD20J18A-AU::pad::PA16
+    mode: Digital input
+    user_label: PA16
+    configuration: null
+  PA18:
+    name: PA18
+    definition: Atmel:SAMD20_Drivers:0.0.1::SAMD20J18A-AU::pad::PA18
+    mode: Digital output
+    user_label: PA18
+    configuration: null
+  PA19:
+    name: PA19
+    definition: Atmel:SAMD20_Drivers:0.0.1::SAMD20J18A-AU::pad::PA19
+    mode: Digital output
+    user_label: PA19
+    configuration: null
+toolchain_options: []
